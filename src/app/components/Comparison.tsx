@@ -39,7 +39,7 @@ export const Comparison = () => {
   return (
     <SectionWrapper>
       <Headline title='Tired of unfinished side projects?' />
-      <div className='flex flex-wrap gap-3'>
+      <div className='flex flex-wrap gap-6'>
         {cards.map((card) => (
           <ComparisonCard
             title={card.title}

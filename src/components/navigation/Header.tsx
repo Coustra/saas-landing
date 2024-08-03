@@ -8,6 +8,8 @@ import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useScrollEvent } from "@/lib/hooks/scroll-event";
 import { Button } from "../ui/button";
+import { Menu } from "lucide-react";
+import { NavigationMenu } from "../menu/NavigationMenu";
 
 export const Header = () => {
   const { scroll } = useScrollEvent(10);
@@ -21,7 +23,12 @@ export const Header = () => {
     >
       <div className='max-w-[1250px] m-auto w-full flex items-center justify-between gap-4'>
         <Logo />
-        <nav className='flex items-center gap-4'>
+        <nav className='hidden lg:flex text-center items-center gap-8'>
+          <NavLink href={"#"}>Home</NavLink>
+          <NavLink href={"#"}>Features</NavLink>
+          <NavLink href={"#"}>Pricing</NavLink>
+        </nav>
+        <nav className='hidden lg:flex items-center gap-4'>
           <NavLink href={"#"}>Login</NavLink>
 
           <Button
@@ -31,6 +38,9 @@ export const Header = () => {
           >
             Get started now
           </Button>
+        </nav>
+        <nav className='lg:hidden'>
+          <NavigationMenu />
         </nav>
       </div>
     </header>

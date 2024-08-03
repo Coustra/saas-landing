@@ -6,7 +6,7 @@ import React from "react";
 
 export default function Features() {
   return (
-    <SectionWrapper id='Features' className='mb-0'>
+    <SectionWrapper id='features' className='mb-0'>
       <Headline
         title='Side Project Mastery, Effortlessly Within Reach'
         section='Features'

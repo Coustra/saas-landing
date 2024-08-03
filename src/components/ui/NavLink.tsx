@@ -25,7 +25,7 @@ export const defaultLinkStyles = (style?: NavLinkProps["variant"]): string => {
       break;
     default:
       cssStyles =
-        "font-medium text-muted-foreground hover:text-inherit duration-150";
+        "font-medium text-sm text-muted-foreground hover:text-inherit duration-150";
       break;
   }
   return cssStyles;
