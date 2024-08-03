@@ -6,25 +6,11 @@ import { Logo } from "../ui/Logo";
 import ShimmerButton from "../magicui/shimmer-button";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
+import { useScrollEvent } from "@/lib/hooks/scroll-event";
 
 export const Header = () => {
-  const [scroll, setScroll] = React.useState(false);
+  const { scroll } = useScrollEvent(10);
 
-  useEffect(() => {
-    const handleScroll = () => {
-      if (window.scrollY > 10) {
-        setScroll(true);
-      } else {
-        setScroll(false);
-      }
-    };
-    window.addEventListener("scroll", handleScroll);
-    return () => {
-      window.removeEventListener("scroll", handleScroll);
-    };
-  }, []);
-
-  const router = useRouter();
   return (
     <header
       className={cn(
