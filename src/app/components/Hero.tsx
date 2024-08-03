@@ -22,7 +22,7 @@ export default function Hero() {
       >
         Get started now
       </Button>
-      <ImageCard />
+      <ImageCard full src='/assets/hero-light.png' alt='hero-image' />
     </SectionWrapper>
   );
 }
