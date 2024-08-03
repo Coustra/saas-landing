@@ -7,6 +7,7 @@ import ShimmerButton from "../magicui/shimmer-button";
 import { useRouter } from "next/navigation";
 import { cn } from "@/lib/utils";
 import { useScrollEvent } from "@/lib/hooks/scroll-event";
+import { Button } from "../ui/button";
 
 export const Header = () => {
   const { scroll } = useScrollEvent(10);
@@ -21,22 +22,15 @@ export const Header = () => {
       <div className='max-w-[1250px] m-auto w-full flex items-center justify-between gap-4'>
         <Logo />
         <nav className='flex items-center gap-4'>
-          <NavLink
-            href={"https://www.instagram.com/jonasdevjourney/"}
-            target='_blank'
-          >
-            Community
-          </NavLink>
+          <NavLink href={"#"}>Login</NavLink>
 
-          <ShimmerButton
-            shimmerColor='#fff'
-            shimmerDuration='1s'
-            className='shadow-2xl py-1.5'
+          <Button
+            variant={"default"}
+            size={"sm"}
+            className='rounded-full px-4 font-bold'
           >
-            <span className='whitespace-pre-wrap text-center text-white dark:from-white dark:to-slate-900/10'>
-              Get in touch
-            </span>
-          </ShimmerButton>
+            Get started now
+          </Button>
         </nav>
       </div>
     </header>
