@@ -15,7 +15,7 @@ export const Header = () => {
   return (
     <header
       className={cn(
-        "p-5 xl:px-0 fixed w-full top-0 z-10 backdrop-blur-md",
+        "p-5 xl:px-0 fixed w-full top-0 z-10 backdrop-blur-lg",
         scroll && "border-b"
       )}
     >

@@ -9,12 +9,12 @@ interface ImageCardProps {
 
 export const ImageCard = () => {
   return (
-    <Card className='bg-muted-foreground border-8 border-muted-foreground relative h-[650px] w-full rounded-xl'>
+    <Card className='bg-muted-foreground border-[12px] border-muted-foreground relative h-[650px] w-full rounded-2xl'>
       <Image
         src='/assets/hero-light.png'
         fill
         alt='hero'
-        className='h-auto rounded-xl object-cover object-center border-2 border-muted-foreground'
+        className='h-auto rounded-2xl object-cover object-center shadow-2xl'
       />
     </Card>
   );
