@@ -1,5 +1,6 @@
 import { Button } from "@/components/ui/button";
 import { Card } from "@/components/ui/card";
+import { Headline } from "@/components/ui/Headline";
 import { ImageCard } from "@/components/ui/ImageCard";
 import { SectionWrapper } from "@/components/ui/SectionWrapper";
 import React from "react";
@@ -7,7 +8,7 @@ import React from "react";
 export default function Hero() {
   return (
     <SectionWrapper className='flex items-center justify-center flex-col gap-8 pt-24 mt-0'>
-      <h1 className='text-7xl font-bold text-center max-w-[800px]'>
+      <h1 className='text-7xl font-black text-center max-w-[800px]'>
         Manage Your Side Projects in One Place
       </h1>
       <p className='text-center text-lg max-w-[400px] font-medium'>
