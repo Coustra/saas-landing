@@ -16,7 +16,7 @@ export const ImageText = (props: ImageTextProps) => {
   return (
     <div
       className={cn(
-        "my-24 flex md:items-center gap-8 md:flex-row flex-col",
+        "my-24 flex md:items-center gap-8 md:flex-row flex-col last:mb-0",
         props.imageRight && "md:flex-row-reverse"
       )}
     >
