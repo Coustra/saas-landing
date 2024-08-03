@@ -13,18 +13,19 @@ export const defaultLinkStyles = (style?: NavLinkProps["variant"]): string => {
   switch (style) {
     case "large":
       cssStyles =
-        "text-lg font-medium text-[#333333] hover:opacity-75 duration-150";
+        "text-lg font-medium light:text-[#333333] light:hover:opacity-75 duration-150";
       break;
     case "small":
       cssStyles =
-        "text-sm font-medium text-[#333333] hover:opacity-75 duration-150";
+        "text-sm font-medium light:text-[#333333] light:hover:opacity-75 duration-150";
       break;
     case "cta":
       cssStyles =
-        "text-lg font-medium text-white bg-black hover:opacity-75 duration-150";
+        "text-lg font-medium light:text-white bg-black light:hover:opacity-75 duration-150";
       break;
     default:
-      cssStyles = "font-medium text-[#333333] hover:opacity-75 duration-150";
+      cssStyles =
+        "font-medium light:text-[#333333] light:hover:opacity-75 duration-150";
       break;
   }
   return cssStyles;

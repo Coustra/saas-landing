@@ -4,6 +4,7 @@ import "./globals.css";
 import { cn } from "@/lib/utils";
 import { Header } from "@/components/navigation/Header";
 import { Footer } from "@/components/navigation/Footer";
+import { Providers } from "./providers";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -18,16 +19,20 @@ export default function RootLayout({
   children: React.ReactNode;
 }>) {
   return (
-    <html lang='en'>
+    <html lang='en' suppressHydrationWarning>
       <body
         className={cn(
-          "min-h-screen bg-background font-sans antialiased",
+          "min-h-screen dark:bg-background text-black dark:text-white font-sans antialiased",
           inter.variable
         )}
       >
-        <Header />
-        <main className='max-w-[1250px] p-5 xl:px-0 mx-auto'>{children}</main>
-        <Footer />
+        <Providers>
+          <Header />
+          <main className='max-w-[1250px] p-5 xl:px-0 mx-auto mt-[65px]'>
+            {children}
+          </main>
+          <Footer />
+        </Providers>
       </body>
     </html>
   );
