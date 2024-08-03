@@ -2,6 +2,8 @@ import type { Metadata } from "next";
 import { Inter } from "next/font/google";
 import "./globals.css";
 import { cn } from "@/lib/utils";
+import { Header } from "@/components/navigation/Header";
+import { Footer } from "@/components/navigation/Footer";
 
 const inter = Inter({ subsets: ["latin"], variable: "--font-sans" });
 
@@ -23,7 +25,9 @@ export default function RootLayout({
           inter.variable
         )}
       >
-        {children}
+        <Header />
+        <main className='max-w-[1250px] p-5 xl:px-0 mx-auto'>{children}</main>
+        <Footer />
       </body>
     </html>
   );
