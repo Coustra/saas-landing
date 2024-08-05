@@ -9,6 +9,7 @@ interface ImageCardProps {
   className?: string;
   src: string;
   alt?: string;
+  priority?: boolean;
 }
 
 export const ImageCard = (props: ImageCardProps) => {
@@ -25,6 +26,7 @@ export const ImageCard = (props: ImageCardProps) => {
           src={props.src}
           fill
           alt={props.alt || props.src}
+          priority={props.priority}
           className='h-auto rounded-2xl object-cover object-center shadow-2xl'
         />
       </AspectRatio>

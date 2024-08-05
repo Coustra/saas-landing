@@ -45,7 +45,7 @@ export const Footer = () => {
             This is the most awesome Saas Platform you have seen.
           </p>
         </div>
-        <nav className='flex justify-between flex-wrap items-center flex-1'>
+        <nav className='flex justify-between flex-wrap items-center flex-1 gap-6'>
           {footerLinks.map((column, index) => (
             <ul
               key={index}

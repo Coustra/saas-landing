@@ -15,6 +15,7 @@ import { Switch } from "@/components/ui/switch";
 import { CheckIcon } from "lucide-react";
 import { SectionWrapper } from "./SectionWrapper";
 import { useState } from "react";
+import { cn } from "@/lib/utils";
 
 interface Plan {
   popular?: boolean;
@@ -72,7 +73,7 @@ export const PricingCards = () => {
         />
         <Label htmlFor='payment-schedule' className='relative ms-3'>
           Annual
-          <span className='absolute -top-10 start-auto -end-28'>
+          <span className='absolute -top-10 start-auto -end-28 max-sm:hidden'>
             <span className='flex items-center'>
               <svg
                 className='w-14 h-8 -me-6'
@@ -97,14 +98,28 @@ export const PricingCards = () => {
         {plans.map((plan, key) => {
           const price = isAnnual ? plan.annual : plan.monthly;
           return (
-            <Card key={key}>
-              <CardHeader className='text-center pb-2'>
-                <CardTitle className='mb-7'>{plan.title}</CardTitle>
-                <span className='font-bold text-5xl'>
-                  {price === 0 ? "Free" : "€" + price}
-                </span>
-              </CardHeader>
-              <CardDescription className='text-center'>
+            <Card key={key} className={cn(plan.popular && "border-primary")}>
+              {plan.popular ? (
+                <CardHeader className='text-center pb-2'>
+                  <Badge className='uppercase w-max self-center mb-3'>
+                    Most popular
+                  </Badge>
+                  <CardTitle className='!mb-7'>{plan.title}</CardTitle>
+                  <span className='font-bold text-5xl'>
+                    {price === 0 ? "Free" : "€" + price}
+                  </span>
+                </CardHeader>
+              ) : (
+                <CardHeader className='text-center pb-2'>
+                  <CardTitle className='mb-7'>{plan.title}</CardTitle>
+                  <span className='font-bold text-5xl'>
+                    {price === 0 ? "Free" : "€" + price}
+                  </span>
+                </CardHeader>
+              )}
+              <CardDescription
+                className={cn("text-center", plan.popular && "w-11/12 mx-auto")}
+              >
                 {plan.subTitle}
               </CardDescription>
               <CardContent>

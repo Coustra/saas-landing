@@ -39,9 +39,10 @@ export const Comparison = () => {
   return (
     <SectionWrapper>
       <Headline title='Tired of unfinished side projects?' />
-      <div className='flex flex-wrap gap-6'>
+      <div className='flex flex-wrap gap-6 max-sm:flex-col'>
         {cards.map((card) => (
           <ComparisonCard
+            key={card.title}
             title={card.title}
             positive={card.positive}
             items={card.items}
@@ -62,15 +63,15 @@ const ComparisonCard = (props: ComparisonCardProps) => {
   return (
     <Card
       className={cn(
-        "flex-1 min-w-[500px] border-destructive bg-destructive/15 min-h-fit",
+        "flex-1 sm:min-w-[400px] border-destructive bg-destructive/15 min-h-fit",
         props.positive && "border-green-600 bg-green-600/15"
       )}
     >
       <CardHeader className='font-bold text-2xl'>{props.title}</CardHeader>
       <CardContent>
         <ul className='list-inside list-none text-xl space-y-6'>
-          {props.items.map((item) => (
-            <li className='flex items-center'>
+          {props.items.map((item, key) => (
+            <li className='flex items-center' key={key}>
               {props.positive ? (
                 <CheckMark className='mr-2 inline-block' />
               ) : (
