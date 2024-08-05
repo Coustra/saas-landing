@@ -19,7 +19,7 @@ export const Logo = () => {
     >
       <Avatar className='w-6 h-6 select-none'>
         <AvatarImage
-          className={cn("object-cover", isDark && "scale-150")}
+          className={"object-cover"}
           src={isDark ? whiteLogo : blackLogo}
         />
         <AvatarFallback className='bg-transparent'>
