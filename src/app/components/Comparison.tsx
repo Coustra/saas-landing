@@ -63,8 +63,8 @@ const ComparisonCard = (props: ComparisonCardProps) => {
   return (
     <Card
       className={cn(
-        "flex-1 sm:min-w-[400px] border-destructive bg-destructive/15 min-h-fit",
-        props.positive && "border-green-600 bg-green-600/15"
+        "flex-1 sm:min-w-[400px] border-red-600 bg-red-600/5 min-h-fit",
+        props.positive && "border-green-600 bg-green-600/5"
       )}
     >
       <CardHeader className='font-bold text-2xl'>{props.title}</CardHeader>
@@ -72,11 +72,17 @@ const ComparisonCard = (props: ComparisonCardProps) => {
         <ul className='list-inside list-none text-xl space-y-6'>
           {props.items.map((item, key) => (
             <li className='flex items-center' key={key}>
-              {props.positive ? (
-                <CheckMark className='mr-2 inline-block' />
-              ) : (
-                <WrongMark className='mr-2 inline-block' />
-              )}
+              <span
+                className={cn(
+                  props.positive ? "text-green-600" : "text-red-600"
+                )}
+              >
+                {props.positive ? (
+                  <CheckMark className='mr-2 inline-block' />
+                ) : (
+                  <WrongMark className='mr-2 inline-block' />
+                )}
+              </span>
               <span>{item.title}</span>
             </li>
           ))}
