@@ -203,8 +203,8 @@ export const PricingTable = () => {
               <h4 className='text-xl font-medium'>Free</h4>
             </div>
             <Table>
-              {planFeatures.map((featureType) => (
-                <TableBody>
+              {planFeatures.map((featureType, key) => (
+                <TableBody key={"free-" + key}>
                   <TableRow
                     key={featureType.type}
                     className='bg-muted hover:bg-muted'
@@ -240,8 +240,8 @@ export const PricingTable = () => {
               <h4 className='text-xl font-medium'>Startup</h4>
             </div>
             <Table>
-              {planFeatures.map((featureType) => (
-                <TableBody>
+              {planFeatures.map((featureType, key) => (
+                <TableBody key={"startup-" + key}>
                   <TableRow
                     key={featureType.type}
                     className='bg-muted hover:bg-muted'
@@ -277,8 +277,8 @@ export const PricingTable = () => {
               <h4 className='text-xl font-medium'>Team</h4>
             </div>
             <Table>
-              {planFeatures.map((featureType) => (
-                <TableBody>
+              {planFeatures.map((featureType, key) => (
+                <TableBody key={"team-" + key}>
                   <TableRow
                     key={featureType.type}
                     className='bg-muted hover:bg-muted'
@@ -314,8 +314,8 @@ export const PricingTable = () => {
               <h4 className='text-xl font-medium'>Enterprise</h4>
             </div>
             <Table>
-              {planFeatures.map((featureType) => (
-                <TableBody>
+              {planFeatures.map((featureType, key) => (
+                <TableBody key={"enterprise-" + key}>
                   <TableRow
                     key={featureType.type}
                     className='bg-muted hover:bg-muted'
