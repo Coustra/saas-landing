@@ -5,7 +5,6 @@ import { Avatar, AvatarFallback, AvatarImage } from "./avatar";
 import Link from "next/link";
 import { Skeleton } from "@/components/ui/skeleton";
 import { useTheme } from "next-themes";
-import { cn } from "@/lib/utils";
 
 export const Logo = () => {
   const { resolvedTheme } = useTheme();
